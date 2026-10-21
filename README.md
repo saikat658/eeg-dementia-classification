@@ -146,61 +146,6 @@ The study uses the following metrics:
 
 Segment-level and subject-level results should be reported separately because they measure different aspects of model performance.
 
-## Experimental Results
-
-The tables below reproduce the supplied results. Missing or inconsistent values are explicitly identified rather than silently corrected.
-
-### 1. Proposed Multi-Band EEGNet
-
-| Class | Accuracy | Precision | Recall | F1-score |
-|---|---:|---:|---:|---:|
-| AD | 73.68% | 100.00% | 37.50% | 54.55% |
-| FTD | 73.68% | 50.00% | 60.00% | 54.55% |
-| CN | 78.95% | 60.00% | 100.00% | 75.00% |
-| **Overall / macro** | **63.16% overall accuracy** | **70.00% macro** | **65.83% macro** | **61.36% macro** |
-
-The supplied macro F1-score is 61.36%. The displayed class F1-scores yield approximately 61.37% when averaged, a minor rounding difference that should be checked against the original evaluation output.
-
-### 2. Hybrid Bi-LSTM Attention
-
-| Class | Accuracy | Precision | Recall | F1-score |
-|---|---:|---:|---:|---:|
-| AD | 0.5789 | 0.0000 | 0.0000 | 0.0000 |
-| FTD | 0.5263 | 0.3333 | 0.8000 | 0.4706 |
-| CN | 0.8421 | 0.7143 | 0.8333 | 0.7692 |
-| **Overall accuracy** | **0.4737** | — | — | — |
-| **Macro average** | — | **0.3492** | **0.5444** | **0.4133** |
-
-### 3. CTNet
-
-| Class | Accuracy | Precision | Recall | F1-score |
-|---|---:|---:|---:|---:|
-| AD | 0.5789 | 0.0000 | 0.0000 | 0.0000 |
-| FTD | 0.4737 | 0.2727 | 0.6000 | 0.3750 |
-| CN | 0.7895 | 0.6250 | 0.8333 | 0.7143 |
-| **Overall accuracy** | **0.4211** | — | — | — |
-| **Macro average** | — | **0.2992** | **0.4778** | **0.3631** |
-
-The supplied CTNet overall accuracy was written as `0..4211`. It is intentionally not treated as a verified numeric result in this table.
-
-### 4. EEGNet
-
-| Class | Accuracy | Precision | Recall | F1-score |
-|---|---:|---:|---:|---:|
-| AD | 0.579 | 0.000 | 0.000 | 0.000 |
-| FTD | 0.263 | 0.263 | 1.000 | 0.417 |
-| CN | 0.684 | 0.000 | 0.000 | 0.000 |
-| **Overall accuracy** | **0.2632** | — | — | — |
-| **Macro average** | — | **0.0877** | **0.3330** | **0.1390** |
-
-### Results interpretation
-
-The supplied results show substantial variation in class-wise performance across the evaluated models. In particular, the baseline results include zero recall for some classes, indicating that aggregate accuracy alone does not adequately characterize model behavior.
-
-The proposed architecture reports a macro F1-score of 61.36% and an overall accuracy of 63.16%. These figures are presented as supplied, but the accuracy definition and consistency of the class-wise metrics should be verified against the original predictions before making direct comparative claims.
-
-**Important:** These tables should not be interpreted as a definitive ranking of architectures until the metrics, test partitions, aggregation procedures, and evaluation levels have been confirmed to be comparable.
-
 ## Limitations
 
 The study has several limitations that should be considered when interpreting the results:
