@@ -1,1 +1,12 @@
 
+# Experimental Results
+
+## Proposed Multi-Band EEGNet
+
+| Class | Precision | Recall | F1-score |
+|---|---:|---:|---:|
+| AD | 1.0000 | 0.3750 | 0.5455 |
+| FTD | 0.5000 | 0.6000 | 0.5455 |
+| CN | 0.6000 | 1.0000 | 0.7500 |
+
+The reported overall accuracy is 63.16%.
