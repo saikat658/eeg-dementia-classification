@@ -19,7 +19,7 @@ The study investigates deep learning approaches for classifying three diagnostic
 - **Frontotemporal dementia (FTD)**
 - **Cognitively normal controls (CN)**
 
-The research emphasizes subject-independent evaluation, comparative assessment of deep learning architectures, and performance analysis at both segment and subject levels. A multi-band EEGNet architecture is investigated alongside established deep learning baselines.
+The research emphasizes subject-independent evaluation, comparative assessment of deep learning architectures, and performance analysis at subject levels. A multi-band EEGNet architecture is investigated alongside established deep learning baselines.
 
 The primary objective is to assess model performance under an evaluation protocol designed to prevent EEG segments from the same participant from appearing in both training and evaluation partitions.
 
@@ -41,8 +41,7 @@ The supplied results indicate that performance varies across architectures and d
 2. Implement subject-independent data partitioning to reduce the risk of subject-level data leakage.
 3. Investigate multi-band temporal feature extraction using a multi-branch EEGNet architecture.
 4. Evaluate classification performance using class-wise and aggregate metrics.
-5. Compare segment-level predictions with subject-level predictions where applicable.
-6. Examine the limitations associated with inter-subject variability and the relatively small number of participants, particularly in the FTD group.
+5. Examine the limitations associated with inter-subject variability and the relatively small number of participants, particularly in the FTD group.
 
 ## Dataset
 
@@ -85,7 +84,7 @@ No additional filtering or artifact-removal procedures are claimed as part of th
 
 ### 2. Segmentation
 
-Continuous EEG recordings are divided into non-overlapping four-second segments.
+Continuous EEG recordings are divided into non-overlapping four-second segments. Then the segments are aggregated into subjects and stored as a numpy array. So each subject now contains segments of the EEG recording. Segments with bad annotations or with boundary events were excluded to prevent the apparence of unwanted features.
 
 At a sampling frequency of 500 Hz, each segment contains:
 
@@ -97,13 +96,13 @@ The resulting segments are used as model inputs, with diagnostic labels inherite
 
 ### 3. Subject-independent evaluation
 
-To reduce the risk of data leakage, participants are separated into training and evaluation partitions before their EEG recordings are segmented.
+To reduce the risk of data leakage, participants are separated into training and evaluation partitions. As a result 68 participants were grouped as training data and remaining 19 subjects in test data.
 
 The evaluation framework incorporates grouped cross-validation and a held-out subject-level test set. The same participant must not occur in both training and evaluation partitions.
 
 Subject-level separation is an established evaluation practice rather than a standalone methodological novelty of this study. Its purpose here is to support a more credible assessment of generalization to unseen participants.
 
-**Configuration details requiring confirmation:** the exact held-out subject count, cross-validation fold count for each experiment, and whether all reported architectures used identical partitions.
+
 
 ### 4. Deep learning architectures
 
