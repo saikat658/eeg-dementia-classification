@@ -178,25 +178,6 @@ For future reproducibility, the following information should be documented where
 
 Source code and model implementation files are not publicly available in this repository.
 
-## Repository Structure
-
-The repository is intended to contain documentation and selected research outputs, not the private model implementation.
-
-```text
-eeg-dementia-classification/
-├── README.md
-├── docs/
-│   ├── methodology.md
-│   └── dataset.md
-├── figures/
-│   ├── architecture.png
-│   └── evaluation_protocol.png
-└── results/
-    ├── model_comparison.csv
-    └── confusion_matrices/
-```
-
-These files and directories are a proposed structure; they should be added only when the corresponding materials are ready for publication.
 
 ## Code Availability
 
