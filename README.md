@@ -218,6 +218,3 @@ The absence of publicly available source code limits independent computational r
 
 saikatalam002@gmail.com
 
----
-
-*This repository documents an academic research project. The reported metrics require verification against the original evaluation outputs, and the findings should not be interpreted as clinical validation.*
