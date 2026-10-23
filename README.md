@@ -31,7 +31,7 @@ This study presents a comparative investigation of deep learning architectures f
 
 The experimental framework uses 19-channel EEG recordings sampled at 500 Hz and non-overlapping four-second segments. Subject-level data separation is performed before segmentation to prevent participant overlap between training and evaluation partitions. Grouped cross-validation and held-out subject-level testing are used to assess generalization.
 
-The evaluated architectures include EEGNet, CNN–Transformer, CTNet, Hybrid Bi-LSTM Attention, and a proposed multi-band EEGNet architecture. The proposed architecture employs four parallel temporal-filter branches intended to capture information associated with delta, theta, alpha, and beta frequency ranges. Performance is assessed using accuracy, precision, recall, F1-score, and comparative evaluation across diagnostic classes.
+The evaluated architectures include EEGNet Transformer, CTNet, PGCETNet, and a proposed multi-band EEGNet architecture. The proposed architecture employs four parallel temporal-filter branches intended to capture information associated with delta, theta, alpha, and beta frequency ranges. Performance is assessed using accuracy, precision, recall, F1-score, and comparative evaluation across diagnostic classes.
 
 The supplied results indicate that performance varies across architectures and diagnostic groups, highlighting the importance of class-wise evaluation rather than relying exclusively on overall accuracy. Further validation is required to establish the robustness and generalizability of the findings.
 
@@ -110,10 +110,9 @@ The comparative study includes the following architectures.
 
 | Architecture | Role in the study |
 |---|---|
-| EEGNet | Compact convolutional neural network baseline for EEG |
-| CNN–Transformer | Convolutional feature extraction combined with attention-based sequence modeling |
+| EEGNet Transformer | Convolutional feature extraction combined with attention-based sequence modeling |
 | CTNet | Deep learning baseline for EEG classification |
-| Hybrid Bi-LSTM Attention | Recurrent sequence modeling with attention |
+| PGCETNet | A parallel EEGNet and Transformer with gated fusion mechanism |
 | Multi-Band EEGNet | Proposed multi-branch temporal-filter architecture |
 
 The availability of results varies by architecture. Only the numerical results supplied for Hybrid Bi-LSTM Attention, CTNet, EEGNet, and the proposed architecture are reported in the current results section. Results for CNN–Transformer require confirmation before inclusion.
